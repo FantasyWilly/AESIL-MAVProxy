@@ -1,0 +1,45 @@
+# mavproxy.yaml
+# 硬體裝置 (裝置名稱)
+serial_port: "/dev/ttyACM0"
+
+# 硬體裝置 (波特率)
+baudrate: 57600
+
+# GCS 地面站 IP 位置 (雙向控制)
+gcs_url: udpout:127.0.0.1:14550
+
+# UDP 資訊發送至其他 IP 地址
+udp_outs:
+  - ["127.0.0.1", 14560]
+
+# UDP 監聽接收 & 發送至 FCU
+udp_ins:
+  - ["127.0.0.1", 14570]
+  - ["127.0.0.1", 14580]
+
+# TCP 監聽連接
+tcp_listens:
+  - ["0.0.0.0", 14650]
+
+# 從 FCU 丟出來的暫存器大小
+hub_maxsize: 5
+
+# HUB -> GCS, UDP 暫存器
+q_gcs_maxsize: 5
+q_udp_maxsize: 5
+
+# 接收 TCP client 送出資料的暫存器
+tcp_send_q_maxsize: 5
+
+# 是否踢掉同一個 IP 的重複 TCP 連線 & 最大各戶量
+tcp_kick_duplicate_ip: True
+tcp_max_clients: 5
+
+# 監控開關 & 監控資料間隔
+monitor_enable: False
+monitor_interval: 1.0
+
+# log
+log_dir: ~/Server_logs
+log_file: mavproxy_server.log
+log_level: INFO
