@@ -48,7 +48,7 @@ pip install -r requirements.txt
   ### Python3 啟動
 
   ```bash
-  cd AESIL-MAVProxy
+  cd AESIL-MAVProxy/MAVProxy
   python3 mavproxy_server.py
   ```
 
